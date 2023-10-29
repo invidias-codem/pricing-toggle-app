@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom"
 import './App.css';
+import MonthlyPricingPlan from "./components/MonthlyPricingPlan";
+import QuarterlyPricingPlan from "./components/QuarterlyPricingPlan";
+import YearlyPricingPlan from "./components/YearlyPricingPlan";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="pricing-header">
+          <h1>Server Storage Pricing</h1>
+          <p>Choose the plan that's right for you.</p>
+          <ul className="pricing-nav">
+            
+            <div><Link to="/monthly">Monthly</Link></div>
+            <div><Link to="/quarterly">Quarterly</Link></div>
+            <div><Link to="/yearly">Yearly</Link></div>
+          </ul>
+          <a href="/" className="btn btn-primary">Close</a>
+        </header>
+
+         {/* Routes that dictate which component to render for each URL */}
+         <Routes>
+          <Route path="/monthly" element={<MonthlyPricingPlan />} />
+          <Route path="/quarterly" element={<QuarterlyPricingPlan />} />
+          <Route path="/yearly" element={<YearlyPricingPlan />} />
+        </Routes>
+        
+      </div>
+    </Router>
   );
 }
 
