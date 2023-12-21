@@ -20,7 +20,9 @@ Getting Started ---
 
 1. Clone this repository:
 
-2. Open the index.html file in your web browser.
+   https://github.com/invidias-codem/pricing-toggle-app.git
+
+3. Open the index.html file in your web browser.
 
 Usage:
 
